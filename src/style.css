@@ -1,0 +1,176 @@
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: Norse-Bold;
+  src: url('./assets/Norse-Bold.otf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: sans-serif;
+  font-size: 16px;
+  --form: white;
+  --right-section: #f9fafb;
+  --input: #fffefe;
+  --input-border: #cccccc;
+  --error: red;
+  --selected: blue;
+  --button: #596d48;
+  --button-active: #475738;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+body > * {
+  flex: auto;
+}
+
+/* LEFT SECTION */
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  height: 100%;
+  padding: 13rem 0 1rem 0;
+  background-image: url('./assets/greens-bg.jpg');
+  background-size: 100% 100%;
+  color: white;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner__logo {
+  width: 7rem;
+  height: 7rem;
+  min-width: 7rem;
+  min-height: 7rem;
+}
+
+.banner__text {
+  font-family: Norse-Bold;
+  font-size: 6rem;
+  margin: 0;
+}
+
+.credits {
+  margin: 0;
+}
+
+.credits a,
+.credits a:visited {
+  color: white;
+}
+
+/* RIGHT SECTION */
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+  height: 100%;
+  gap: 3rem;
+  background-color: var(--right-section);
+}
+
+.right-section__main-text,
+.right-section__action-text,
+.right-section__login {
+  margin: 0 3rem;
+}
+
+.right-section__main-text {
+  font-size: 2rem;
+}
+.right-section__action-text {
+  font-size: 2rem;
+}
+
+.form__fields {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, min-content);
+  align-items: center;
+  padding: 2rem 3rem;
+  gap: 2rem 8rem;
+  background-color: var(--form);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form__header {
+  grid-area: 1 / 1 / 2 / 3;
+  font-size: 2rem;
+}
+
+.form__fields label {
+  line-height: 2rem;
+}
+
+.form__fields input {
+  display: block;
+  width: 15rem;
+  padding: 0.5rem;
+  background-color: var(--input);
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+}
+
+.form__fields input:focus {
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form__fields input.invalid {
+  border-color: var(--error);
+}
+
+.form__fields input.invalid:focus {
+  outline: var(--error) solid 1px;
+}
+
+.form__submit {
+  font-size: 1.25rem;
+  margin: 3rem 3rem 0 3rem;
+  padding: 1rem 3rem;
+  color: white;
+  background-color: var(--button);
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+.form__submit:active {
+  background-color: var(--button-active);
+}
+
+.right-section__login {
+  font-size: 1.25rem;
+}
+
+.right-section__login a {
+  font-weight: bold;
+}
+
+.right-section__login a,
+.right-section__login a:visited {
+  color: var(--button);
+  text-decoration: none;
+}
